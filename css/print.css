@@ -1,0 +1,12 @@
+body {
+   visibility: hidden;
+   position: relative;
+}
+.print {
+    top: 10px;
+    position: absolute;
+    visibility: visible;
+}
+.no-print {
+    display: none;
+}

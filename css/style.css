@@ -1,0 +1,29 @@
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #fff;
+}
+
+th {
+    margin-bottom: 10px;
+}
+
+td, tr {
+    padding: 8px;
+    text-align: right;
+}
+ul.nav span.badge{
+ font-size: 18px;   
+}
+.form-box {
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 25px;
+    border-radius: 3%;
+}
+
+label.required::after {
+    content: "*";
+    color: red;
+    margin-right: 10px;
+}

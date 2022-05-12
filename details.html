@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التفاصيل</title>
+      <!-- Google Fonts  -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+      <!-- Bootstrap CDN -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+      <!-- CSS Stylesheet  -->
+      <link rel="stylesheet" href="css/style.css">
+
+    
+</head>
+<body>
+    <nav-bar></nav-bar>
+    <div class="container">
+        <div class="">
+            <button id="edit-order"
+                onclick="editOrder()" 
+                class="btn btn-dark mt-5 px-4 d-none">
+                تعديل الطلبية  
+                <i class="bi bi-pencil-square"></i> 
+            </button>
+
+            <button id="add-products-button"
+                class="btn btn-outline-dark px-3 mt-5 d-none" 
+                type="button" 
+                data-bs-toggle="offcanvas" 
+                data-bs-target="#offcanvasRight" 
+                aria-controls="offcanvasRight">
+                    إضافة أصناف إلى الطلبية
+                    <i class="bi bi-plus-square me-2"></i>
+            </button>
+        </div>
+
+        <div class="table-responsive mt-5">
+            <table id="ph-table" class="table table-hover table-bordered caption-top fw-bold table-striped table-sm" dir="rtl">
+            <caption class="text-end">معلومات الصيدلية</caption>
+            <thead class="table-light">
+                <tr>
+                    <th> الصيدلية </th>
+                    <th> العنوان</th>
+                    <th> رقم الهاتف</th>
+                    <th> السعر الكلي</th>
+                    <th>تاريخ الطلب </th>
+                    <th> تاريخ التسليم </th>
+                    <th> ملاحظات </th>
+                </tr>
+            </thead>
+            <tbody id="ph-table-body">
+
+            </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive mt-5">
+            <table id="ords-table" class="table table-hover table-bordered caption-top fw-bold table-striped" dir="rtl">
+            <caption class="text-end">معلومات الطلبية</caption>
+            <thead class="table-light">
+                <tr>
+                    <th> الصنف </th>
+                    <th> الشركة</th>
+                    <th> الكمية </th>
+                    <th> السعر الإفرادي </th>
+                    <th> السعر الإجمالي </th>
+                    <th> نوع الصنف </th>
+                </tr>
+            </thead>
+            <tbody id="ords-table-body">
+
+            </tbody>
+            
+            </table>
+        </div>
+        <div class="edit-btn-container">
+            <button id="confirm-edit-btn" onclick="confirmEdition()" class="btn btn-dark px-5 ms-5 mt-3 d-none">تأكيد تعديل الطلبية <i class="px-2 bi bi-check-circle"></i></button>
+            <button id="cancel-edit-btn" onclick="cancelEdit()" class="ms-5 btn btn-outline-dark px-5 mt-3 d-none">إلغاء <i class="bi bi-x-lg"></i></button>
+        </div>
+       
+            <!-- Offcanvas Modal  -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">إضافة منتجات إلى الطلبية </h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="input-group">
+                        <span class="input-group-text">الشركة</span>
+                        <select onchange="getRelatedProducts()" class="form-select" id="filter-company" required>
+                            <option value="0">اختر الشركة</option>
+                        </select>
+                        <!-- <div class="input-group mt-3">
+                            <input class="form-control" type="search" placeholder="بحث عن أصناف .. " id="searchField">
+                      
+                            <button onclick="updateProducts('search')" class="btn"><i class="bi bi-search"></i></button>
+                        </div> -->
+                        
+                    </div>
+                    <div id="message"></div>
+                    <!-- Spinner  -->
+                    <div class="text-center">
+                        <div id="prod-spinner" class="spinner-border mt-4 mb-3 d-none" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <!-- Products Table  -->
+                    <table id="table" class="table table-hover table-bordered caption-top fw-bold table-striped table-sm mt-4 d-none">
+                        <thead class="table-light">
+                            <tr>
+                                <th>  الصنف </th>
+                                <th>  السعر  </th>
+                                <th>  الكمية </th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            
+                        </tbody>
+                    </table>
+                     <div class="confirmBtn"></div> 
+                     <div id="added-products">
+                         <div id="list-header" class="d-flex justify-content-between d-none">
+                            <h5 class="mb-3 mt-3 fw-bold d-inline-flex">الأصناف المضافة</h5>
+                            <button onclick="clearProducts()" type="button" class="btn-close d-inline-flex mt-2" aria-label="Close"></button>
+                         </div>
+                         <ol class="list-group list-group-numbered">
+                         </ol>
+                     </div>
+                </div>    
+            </div>
+      
+            <div class="row g-4 d-none" id="row">
+                <!-- Spinner  -->
+                <div class="text-center">
+                    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="visually-hidden"></span>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="modal fade" id="myModal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+              
+                    <div class="modal-header">
+                      <h4 class="modal-title"> تأكيد إضافة الأصناف إلى الطلبية ؟   </h4>
+                    </div>
+              
+                   
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-dark px-4" data-bs-dismiss="modal">إلغاء</button>
+                      <button onclick="confirmAddtoOrder()" id="confirmAddtoOrderBtn" type="button" class="btn btn-dark" data-bs-dismiss="modal">تأكيد</button>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+              <!-- Logout Popup  -->
+              <log-out></log-out>
+
+    </div>
+    <!-- Bootstrap Scripts  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- Navbar  -->
+    <script src="js/components/popup.js"></script>
+    <script src="js/components/navbar.js"></script>
+    <!-- Script -->
+    <script src="js/details.js"></script>
+    
+     <!-- Nav Links  -->
+     <script src="js/validation/navlinks.js"></script>
+     <!-- Logout  -->
+     <script src="js/validation/logout.js"></script>
+</body>
+</html>

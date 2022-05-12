@@ -1,0 +1,13 @@
+@media only screen and (max-width: 1024px) {
+    .form-box {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 765px) {
+    .button-text {
+        display: none;
+    }
+    #hide-btn-icon {
+        display: none;
+    }
+}

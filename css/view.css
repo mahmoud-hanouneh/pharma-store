@@ -1,0 +1,15 @@
+body {
+    background-color: #F8F9FA;
+    font-family: 'Tajawal', sans-serif;
+}
+.ph-price {
+    color: #55B073;
+    font-size: 1rem;
+    font-weight: 900;
+}
+#spinner {
+    position: absolute;
+    left: 50%;
+    top: 18rem;
+    z-index: 100; 
+}
