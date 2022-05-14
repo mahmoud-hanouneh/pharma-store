@@ -1,5 +1,5 @@
 ---
-description: >-
+Description: >-
   Mutli page store management system created using pure Javascript (Vanilla JS). 
 
 ---
@@ -10,8 +10,8 @@ description: >-
 | :--- | :--- |
 | 1 | [Overview](#overview) |
 | 2 | [Built with](#built-with) |
-| 4 | [Project Details and Store Permissions](#project-details-and-store-permissions) |
-| 3 | [Author](#author) |
+| 3 | [Project Details and Store Permissions](#project-details-and-store-permissions) |
+| 4 | [Author](#author) |
   
 ### Overview
 # PHARMA STORE - Store Management System
