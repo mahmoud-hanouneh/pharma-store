@@ -10,8 +10,8 @@ description: >-
 | :--- | :--- |
 | 1 | [Overview](#overview) |
 | 2 | [Built with](#built-with) |
+| 4 | [Project Details and Store Permissions](#project-details) |
 | 3 | [Auther](#auther) |
-| 4 | [Project Details](#project-details) |
   
 ### Overview
 # PHARMA STORE - Store Management System
@@ -24,7 +24,7 @@ description: >-
 - HTML
 - CSS (Bootstrap)
 
-### Project Details - Store Permissions
+### Project Details and Store Permissions
 - Managing Post and Get requests to and from the server (ASP.NET Server).
 - Checking received orders from pharmacies..
 - Edit specific order details such as the receiving date, changing the ordered quantity for a specific product, and more options.
