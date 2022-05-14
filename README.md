@@ -10,8 +10,8 @@ description: >-
 | :--- | :--- |
 | 1 | [Overview](#overview) |
 | 2 | [Built with](#built-with) |
-| 4 | [Project Details and Store Permissions](#project-details) |
-| 3 | [Auther](#auther) |
+| 4 | [Project Details and Store Permissions](#project-details-and-store-permissions) |
+| 3 | [Author](#author) |
   
 ### Overview
 # PHARMA STORE - Store Management System
