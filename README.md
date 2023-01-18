@@ -16,20 +16,20 @@ Description: >-
 ### Overview
 # PHARMA STORE - Store Management System
 
- PhStore is multi page store management system consists of 7 pages.
+ PhStore is a medical warehouses management dashboard consists of 7 pages.
 
 ### Built with
 
-- Vanilla Javascript
+- Vanilla JavaScript (work included FETCH API to manage GET and POST async requests)
 - HTML
 - CSS (Bootstrap)
 
 ### Project Details and Store Permissions
 - Managing Post and Get requests to and from the server (ASP.NET Server).
-- Checking received orders from pharmacies..
-- Edit specific order details such as the receiving date, changing the ordered quantity for a specific product, and more options.
-- The store can add a company.
-- The store can add products related to an added company.
+- Checking received orders from pharmacies.
+- Editing specific order details such as the receiving date, changing the ordered quantity for a specific product, and more options.
+- The warehouse can add a company.
+- The warehouse can add products related to an added company.
 
 ## Author
 
