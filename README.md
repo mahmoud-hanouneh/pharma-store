@@ -1,6 +1,6 @@
 ---
 Description: >-
-  Mutli page store management system created using pure Javascript (Vanilla JS). 
+  Mutlipage medical warehouse management system created using pure Javascript (Vanilla JS). 
 
 ---
 
