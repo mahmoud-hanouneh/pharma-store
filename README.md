@@ -11,7 +11,8 @@ Description: >-
 | 1 | [Overview](#overview) |
 | 2 | [Built with](#built-with) |
 | 3 | [Project Details and Store Permissions](#project-details-and-store-permissions) |
-| 4 | [Author](#author) |
+| 4 | [Screenshots on Google Photos](#screenshots) |
+| 5 | [Author](#author) |
   
 ### Overview
 # PHARMA STORE - Store Management System
@@ -30,6 +31,9 @@ Description: >-
 - Editing specific order details such as the receiving date, changing the ordered quantity for a specific product, and more options.
 - The warehouse can add a company.
 - The warehouse can add products related to an added company.
+
+### Screenshots
+https://photos.app.goo.gl/1gjh84LUT4URKH4P6
 
 ## Author
 
